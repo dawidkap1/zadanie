@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Task Manager - Aplikacja do zarządzania zadaniami
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ta aplikacja to prosty menedżer zadań, który umożliwia dodawanie, edycję, usuwanie i aktualizowanie stanu zadań. Zadania są przechowywane w bazie danych MySQL.
 
-## Available Scripts
+## Pliki
 
-In the project directory, you can run:
+- `App.js` - Główny plik aplikacji React, który definiuje routing i renderuje komponenty.
+- `Menu.js` - Komponent menu nawigacyjnego, wykorzystany w głównym układzie strony.
+- `AddTask.js` - Komponent formularza do dodawania nowych zadań.
+- `TaskList.js` - Komponent wyświetlający listę zadań oraz umożliwiający usuwanie i aktualizację stanu zadań.
 
-### `npm start`
+## Instalacja i uruchomienie
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Sklonuj repozytorium na swój lokalny komputer.
+2. Zainstaluj zależności przy pomocy komendy `npm install`.
+3. Uruchom serwer MySQL przy użyciu narzędzia XAMPP.
+4. Skonfiguruj połączenie z bazą danych MySQL w pliku `serwer.js`.
+5. Zaimportuj przykładową bazę danych `tasks.sql` do swojej instancji MySQL w XAMPP.
+6. Uruchom aplikację przy pomocy komendy `npm start`.
+7. Uruchom serwer aplikacji przy pomocy komendy `node serwer.js`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Uwaga:** Upewnij się, że Twój XAMPP jest uruchomiony i działa poprawnie przed uruchomieniem aplikacji. Należy również upewnić się, że konfiguracja połączenia z bazą danych w pliku `serwer.js` jest zgodna z ustawieniami Twojego XAMPPa.
 
-### `npm test`
+## Endpointy API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `GET /tasks` - Pobiera wszystkie zadania z bazy danych.
+- `POST /addtask` - Dodaje nowe zadanie do bazy danych.
+- `PUT /tasks/:id` - Aktualizuje stan zadania o podanym identyfikatorze.
+- `DELETE /tasks/:id` - Usuwa zadanie o podanym identyfikatorze.
 
-### `npm run build`
+## Technologie
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React - biblioteka do budowania interfejsów użytkownika.
+- React Router - biblioteka do obsługi routingu w aplikacji React.
+- React Bootstrap - zestaw gotowych komponentów interfejsu użytkownika.
+- Express - framework do tworzenia serwerów aplikacji w Node.js.
+- MySQL - system zarządzania relacyjnymi bazami danych.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Autor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ta aplikacja została stworzona przez Dawid Kapela.

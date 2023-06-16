@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Menu from "./components/Menu";
+import AddTask from "./components/AddTask";
+import TaskList from "./components/TaskList";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const router = createBrowserRouter([
+ {
+  path: "*",
+  Component: Root,
+  children: [
+   {
+    path: "addtask",
+    element: <AddTask />,
+   },
+   {
+    path: "tasklist",
+    element: <TaskList />,
+   },
+  ],
+ },
+]);
+
+const App = () => {
+ return (
+  <>
+   <RouterProvider router={router} />
+  </>
+ );
+};
+
+function Root() {
+ return (
+  <>
+   <Menu></Menu>
+   <Container>
+    <Routes>
+     <Route path="/" element={<Home />} />
+     <Route path="/addtask" element={<AddTask />} />
+     <Route path="/tasklist" element={<TaskList />} />
+    </Routes>
+   </Container>
+  </>
+ );
 }
+
+const Home = ({ onTaskAdded, refreshKey }) => {
+ return (
+  <>
+   <Container className="mt-4">
+    <h1 className="text-center">Hello World</h1>
+   </Container>
+  </>
+ );
+};
 
 export default App;
